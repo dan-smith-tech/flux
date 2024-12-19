@@ -1,3 +1,7 @@
+"""
+Collects and processes user input.
+"""
+
 import questionary
 
 from cache import read_cache, write_cache

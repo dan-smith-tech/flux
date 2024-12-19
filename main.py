@@ -1,18 +1,21 @@
-from input import get_guidance_scale, get_image_size, get_prompt
+"""
+Entry point of the program.
+"""
 
-# from model import get_image
+from input import get_guidance_scale, get_image_size, get_prompt
+from model import get_image
 
 
 def init():
+    """
+    Collects user input and generates an image accordingly.
+    """
+
     prompt = get_prompt()
     width, height = get_image_size()
     guidance_scale = get_guidance_scale()
-    # get_image(prompt, width, height, guidance_scale)
-    # print("Image generated.")
-    print("Prompt: ", prompt)
-    print("Width: ", width)
-    print("Height: ", height)
-    print("Guidance Scale: ", guidance_scale)
+    get_image(prompt, width, height, guidance_scale)
+    print("Image generated.")
 
 
 if __name__ == "__main__":

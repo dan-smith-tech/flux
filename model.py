@@ -1,3 +1,7 @@
+"""
+Downloads, configures, and runs the image generator model.
+"""
+
 import torch
 from diffusers import FluxPipeline
 
