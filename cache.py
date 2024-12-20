@@ -6,6 +6,7 @@ The cache should contain exactly:
 - `width`: integer - width of the generated image
 - `height`: integer - height of the generated image
 - `guidance_scale`: integer - higher values result in closer adherence to the prompt
+- `output_file`: string - name of the output file
 """
 
 import json
@@ -22,7 +23,7 @@ def read_cache():
                 k: v
                 for k, v in json.load(f).items()
                 if v is not None
-                and k in {"prompt", "width", "height", "guidance_scale"}
+                and k in {"prompt", "width", "height", "guidance_scale", "output_file"}
             }
     except FileNotFoundError:
         cache = {}

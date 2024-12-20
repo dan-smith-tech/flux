@@ -7,6 +7,28 @@ import questionary
 from cache import read_cache, write_cache
 
 
+def get_output_file():
+    """
+    Ask the user to enter the name of the output file.
+
+    Returns:
+        str: The name of the output file entered by the user.
+    """
+
+    # read the previously used output file from the cache, if available
+    output_file = read_cache().get("output_file", "output")
+
+    # pre-fill the output file with the previous value
+    output_file = questionary.text(
+        "Output Filename (/output/<this_value>.png):", default=output_file
+    ).ask()
+
+    # cache the output file for when the program is next run
+    write_cache({"output_file": output_file})
+
+    return output_file
+
+
 def get_guidance_scale():
     """
     Ask the user to enter a guidance scale.
