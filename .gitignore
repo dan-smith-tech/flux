@@ -1,4 +1,4 @@
 __pycache__/
 .input.json
-output.png
+cache/
 venv/
